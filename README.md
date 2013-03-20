@@ -31,6 +31,11 @@ file with CRLF line terminators as suggested by [RFC
 This program should have a manpage, but I was too lazy to
 write one.
 
+To build this program, you'll need to have installed a
+recent `ghc` and the packages `ssv`, `parseargs` and
+`parsec-3` from [Hackage](http://hackage.haskell.org).  Then
+just say "make".
+
 This program is licensed under the "MIT License".  Please
 see the file COPYING in the source distribution of this
 software for license terms.
