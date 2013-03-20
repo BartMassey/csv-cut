@@ -1,4 +1,8 @@
 -- Copyright © 2013 Bart Massey
+-- [This program is licensed under the "MIT License"]
+-- Please see the file COPYING in the source
+-- distribution of this software for license terms.
+
 -- Select columns and/or rows from a CSV file
 
 import Data.List
