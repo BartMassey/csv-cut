@@ -77,7 +77,7 @@ select i (j : js) (s : ss) =
   case compare i j of
     GT -> select i js (s : ss)
     EQ -> s : select (i + 1) js ss
-    LT -> select (i + 1) js ss
+    LT -> select (i + 1) (j : js) ss
 
 main :: IO ()
 main = do
