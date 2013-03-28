@@ -5,7 +5,7 @@
 
 -- Select columns and/or rows from a CSV file
 
-import Data.List
+import Data.List (intersect)
 import System.Console.ParseArgs
 import System.IO
 import Text.Parsec
@@ -74,7 +74,7 @@ argd = [
     argData = argDataOptional "csv-file" ArgtypeString,
     argDesc = "CSV file to process." } ]
 
-select :: Int -> [Int] -> [[String]] -> [[String]]
+select :: Int -> [Int] -> [a] -> [a]
 select _ [] _ = []
 select _ _ [] = []
 select i (j : js) (s : ss) =
@@ -95,6 +95,6 @@ main = do
   h <- getArgStdio argv ArgSource ReadMode
   text <- hGetContents h
   let csv = readCSV text
-  let cols = select 0 colspec $ transpose csv
-  let rows = select 0 rowspec $ transpose cols
-  hPutCSV stdout rows
+  let rows = select 0 rowspec csv
+  let fields = map (select 0 colspec) rows
+  hPutCSV stdout fields
