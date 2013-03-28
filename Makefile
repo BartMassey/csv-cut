@@ -5,3 +5,6 @@
 
 csv-cut: csv-cut.hs
 	ghc -O2 -Wall --make csv-cut
+
+gencsv: gencsv.hs
+	ghc -O2 -Wall --make gencsv
